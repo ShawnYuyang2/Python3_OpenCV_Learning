@@ -30,11 +30,10 @@ def video_demo():
 
 # #####读取图片并显示######
 
-
-src = cv.imread('C:/Users/zx/Desktop/test.jpg')   # 读图片,就是个数组了
-cv.namedWindow('input image', cv.WINDOW_AUTOSIZE)
-cv.imshow("input image", src)  # 通过open_cv的GUI显示图像
-get_image_info(src)
+# src = cv.imread('C:/Users/zx/Desktop/test.jpg')   # 读图片,就是个数组了
+# cv.namedWindow('input image', cv.WINDOW_AUTOSIZE)
+# cv.imshow("input image", src)  # 通过open_cv的GUI显示图像
+# get_image_info(src)
 video_demo()
 cv.imwrite("C:/Users/zx/Desktop/result.jpg", src)
 cv.waitKey(0)  # 等待一个按键输入后退出

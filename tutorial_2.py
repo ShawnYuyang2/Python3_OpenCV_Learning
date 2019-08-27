@@ -22,6 +22,13 @@ def access_pixels(image):
     cv.imshow("pixels_demo", image)
 
 
+# 专门像素取反的api bitwise_not(),是c代码，比上面那个快很多
+
+def inverse(image):
+    dst = cv.bitwise_not(image)
+    cv.imshow("inverse demo", dst)
+
+
 # 利用np创建新的图像
 def create_image():
     """"""""""
@@ -41,6 +48,11 @@ def create_image():
     print(m1)
     m2 = m1.reshape([1, 9])
     print(m2)
+
+    m3 = np.array([[2, 3, 4], [4, 5, 6], [7, 8, 9]], np.int32)  # 定义一个三维数组
+    m3.fill(9)  # 将m3填充9
+    print(m3)
+
 # blue,green,red三色通道组合起来才有彩色图像
 
 
@@ -50,8 +62,11 @@ src = cv.imread('C:/Users/zx/Desktop/test.jpg')   # 读图片,就是个数组了
 cv.imwrite("C:/Users/zx/Desktop/result.jpg", src)
 # 计时开始
 t1 = cv.getTickCount()  # 获取当前cpu的时钟点数t1
+
 # access_pixels(src)
 create_image()
+# inverse(src)
+
 t2 = cv.getTickCount()  # 获取当前cpu的时钟点数t2
 # 计时结束
 
